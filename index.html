@@ -1,0 +1,58 @@
+
+<!doctype html><html lang="cs"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pacient v systému</title>
+<link rel="stylesheet" href="theme.css"/></head><body>
+<section class="hero"><div class="container">
+  <h1>Rozumět péči. Mluvit slušně a jasně. Vědět, kam se obrátit.</h1>
+  <p>Praktický portál pro pacienty a pečující v ČR: práva, komunikace, adresář pomoci a průvodce stížností.</p>
+  <div class="mt-16"><a class="btn primary" href="co-delat-ted.html">Rychlá pomoc</a> <a class="btn" href="#generator">Napsat stížnost</a></div>
+</div></section>
+
+<section class="section"><div class="container grid grid-3">
+  <div class="card"><h3>Co dělat teď</h3><p class="small">Checklist a asertivní věty pro situace na oddělení i v ambulanci.</p><a class="btn" href="co-delat-ted.html">Otevřít</a></div>
+  <div class="card"><h3>Práva pacienta</h3><p class="small">Jednoduše vysvětlené právní základy a oficiální zdroje.</p><a class="btn" href="prava-pacienta.html">Zobrazit</a></div>
+  <div class="card"><h3>Organizace a pomoc</h3><p class="small">Najděte pacientské a právní organizace podle kraje a diagnózy.</p><a class="btn" href="#organizations">Vyhledat</a></div>
+</div></section>
+
+<section id="organizations" class="section"><div class="container">
+  <h2>Adresář organizací</h2>
+  <p class="small">Peer podpora, právní poradny, psychologická pomoc. Filtrovat lze dle diagnózy a kraje.</p>
+  <div class="grid" style="grid-template-columns:1fr 160px 200px">
+    <input id="q" class="input" placeholder="Hledat organizaci…"/>
+    <select id="diag" class="select">
+      <option value="vse">Diag: vše</option><option value="obecne">Obecné</option>
+      <option value="onkologie">Onkologie</option><option value="diabetes">Diabetes</option>
+      <option value="porodnictvi">Porodnictví</option><option value="rehabilitace">Rehabilitace</option>
+    </select>
+    <select id="region" class="select">
+      <option value="vse">Kraj: vše</option><option value="celorepublikové">Celorepublikové</option>
+      <option value="Praha">Praha</option><option value="Středočeský">Středočeský</option><option value="Ústecký">Ústecký</option>
+    </select>
+  </div>
+  <ul id="org-list" class="list mt-16"></ul>
+</div></section>
+
+<section id="generator" class="section"><div class="container">
+  <h2>Generátor stížnosti</h2><p class="small">Vyplňte pole, zkontrolujte náhled a zkopírujte do schránky.</p>
+  <div class="grid" style="grid-template-columns:1fr 1fr">
+    <div class="card">
+      <div class="grid">
+        <input id="to" class="input" placeholder="Komu" value="Oddělení/Nemocnice, Ulice 1, 111 11 Město"/>
+        <input id="from" class="input" placeholder="Odesílatel" value="Jméno Příjmení, tel., e‑mail"/>
+        <input id="role" class="input" placeholder="Vztah (pacient/pečující)" value="pacient/pečující"/>
+        <textarea id="summary" class="input" placeholder="Popis situace (stručně)">Dne DD.MM.RRRR došlo k situaci… (stručně a věcně, kdo/kdy/co).</textarea>
+        <textarea id="request" class="input" placeholder="Co požadujete">Žádám o vysvětlení, nápravu a informaci o přijatých opatřeních.</textarea>
+        <input id="attachments" class="input" placeholder="Přílohy" value="Kopie dokumentace (pokud máte)"/>
+      </div>
+    </div>
+    <div class="card">
+      <div class="small"><strong>Náhled dopisu</strong></div>
+      <pre id="letter" class="pre"></pre>
+      <button class="btn" onclick="copyLetter()">Zkopírovat do schránky</button>
+    </div>
+  </div>
+</div></section>
+
+<script src="shared.js"></script><script src="data.js"></script><script src="main.js"></script>
+</body></html>

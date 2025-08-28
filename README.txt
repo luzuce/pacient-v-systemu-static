@@ -1,0 +1,1 @@
+Otevřete index.html dvojklikem. Editujte HTML/CSS/JS soubory ve Visual Studio. Menu v shared.js, barvy v theme.css, organizace v data.js.
